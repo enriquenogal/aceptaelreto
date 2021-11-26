@@ -1,3 +1,4 @@
+package level3;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ import java.util.Scanner;
  *
  * @author enriquenogal
  */
-public class Ejercicio609 {
+public class Ejercicio609b {
 
     class Torre {
         private int i;
@@ -29,7 +30,7 @@ public class Ejercicio609 {
     }
 
     public static void main(String[] args) {
-        new Ejercicio609().run();
+        new Ejercicio609b().run();
     }
 
     public void run() {
@@ -52,36 +53,34 @@ public class Ejercicio609 {
     }
 
     public Torre calculaPosicionMinimo(ArrayList<Torre> torres, int nTorres, int dimensionTablero) {
-        int caminoActual, iMinimo = 0, jMinimo = 0, caminoMinimo = Integer.MAX_VALUE;
-        //calculo los caminos y miro cual es el mínimo
+        int caminoActual, iMinimo = 0, jMinimo = 0, caminoMinimo;
+        //calculo i minimo
+        caminoMinimo = Integer.MAX_VALUE;
         for (int i = 0; i < dimensionTablero; i++) {
-            for (int j = 0; j < dimensionTablero; j++) {
-                caminoActual = calculaSumaCaminos(i, j, torres, caminoMinimo);
-                //System.out.println("casilla -> i: " + i + " j: " + j + " :: camino: " + caminoActual + " :: caminoMinimo: " + caminoMinimo);
-                if (caminoActual < caminoMinimo) {
-                    caminoMinimo = caminoActual;
-                    iMinimo = i;
-                    jMinimo = j;
-                }
-                if (caminoMinimo == 0) return new Torre(iMinimo, jMinimo);
-                else if (caminoMinimo == nTorres - 1) return new Torre(iMinimo, jMinimo);
-                // hay que encontrar la regla para números de torres superior a 9
+            caminoActual = 0;
+            for (Torre torre : torres) {                
+                caminoActual = caminoActual + + Math.abs(i - torre.getI());
+                if (caminoActual >= caminoMinimo) break;
+            }
+            if (caminoActual < caminoMinimo) {
+                caminoMinimo = caminoActual;
+                iMinimo = i;
+            }
+        }
+        //calculo j minimo
+        caminoMinimo = Integer.MAX_VALUE;
+        for (int j = 0; j < dimensionTablero; j++) {
+            caminoActual = 0;
+            for (Torre torre : torres) {                
+                caminoActual = caminoActual + + Math.abs(j - torre.getJ());
+                if (caminoActual >= caminoMinimo) break;
+            }
+            if (caminoActual < caminoMinimo) {
+                caminoMinimo = caminoActual;
+                jMinimo = j;
             }
         }
         return new Torre(iMinimo, jMinimo);
-    }
-
-    public int calculaSumaCaminos(int i, int j, ArrayList<Torre> torres, int caminoMinimo) {
-        int resultado = 0;
-        for (Torre torre : torres) {
-            resultado = resultado
-                    + Math.abs(j - torre.getJ())
-                    + Math.abs(i - torre.getI());
-            if (resultado >= caminoMinimo) {
-                break;
-            }
-        }
-        return resultado;
     }
 
 }
