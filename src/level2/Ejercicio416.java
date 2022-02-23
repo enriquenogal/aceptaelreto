@@ -1,6 +1,8 @@
 package level2;
 
 
+
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,6 +28,7 @@ public class Ejercicio416 {
         while (n != 0) {
             n = Integer.parseInt(sc.nextLine());
             if (n != 0) {
+                cumples.clear();
                 coincide = false;
                 for (i = 0; i < n; i++) {
                     entradas = sc.next().split("/");
