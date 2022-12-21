@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package unresolved;
+
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -17,31 +17,23 @@ public class Ejercicio660 {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
         String[] palabras;
-        HashSet silabas = new HashSet<String>();
         for (int i = 0; i < n; i++) {
             palabras = sc.nextLine().split(" ");
-            silabas.clear();
-            for (int j = 0; j < palabras.length; j++) {
-                separarSilabas(palabras[i],silabas);
-            }
-            System.out.println(silabas.size());
+            tratarCaso(palabras);
+            
         }
     }
     
-    public static void separarSilabas(String palabra, HashSet<String> silabas) {
-        String silaba = "";
-        for (int i = 0; i < palabra.length(); i++) {
-            if (i == 0) {
-                silaba = "" + palabra.charAt(i);
-            } else {
-                
-                
-                
-                
-                
-            }
+    public static void tratarCaso(String[] palabras) {
+        HashSet silabas = new HashSet<String>();
+        for (int i = 0; i < palabras.length; i++) {
+             if (palabras[i].length() == 1 || palabras[i].length() == 2) {
+                 silabas.add(palabras[i]);
+             }  else {
+                 //TODO - resto de cosas para separar sílabas
+             }        
         }
-        
+        System.out.println(silabas.size());
     }
     
     public static boolean isVowel(char c) {
