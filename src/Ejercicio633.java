@@ -50,7 +50,7 @@ public class Ejercicio633 {
             String key = entry.getKey();
             int nMachos = entry.getValue();
             int nHembras = hembras.getOrDefault(key, 0);
-            System.out.println(key + ": " + nMachos + " - " + nHembras);
+            //System.out.println(key + ": " + nMachos + " - " + nHembras);
             if (nMachos != 0 && nHembras != 0) {
                 parejasCompletas += Math.min(nMachos, nHembras);
                 sobrantes += (Math.max(nMachos, nHembras) - Math.min(nMachos, nHembras));
