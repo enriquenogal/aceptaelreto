@@ -32,15 +32,14 @@ public class Ejercicio641b {
                         sumaValores -= casos.get(0);
                         casos.remove(0);
                     }
-                    if (casos.size() == diasCalculo) {
+                    //if (casos.size() == diasCalculo) {
                         if (sumaValores > max) {
                             max = sumaValores;
                         }
-                    }
+                    //}
                 }
                 System.out.println(max);
             }
         } while ((!(diasCalculo == 0 && diasTotal == 0)));
     }
-
 }
