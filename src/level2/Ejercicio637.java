@@ -28,11 +28,8 @@ public class Ejercicio637 {
                 if (msg.charAt(j) == ' ') {
                     contador += 2;
                 } else {
-                    //System.out.print(contador + " -> ");
                     contador += m.get(msg.charAt(j));
-                    //System.out.print(msg.charAt(j) + ":" + m.get(msg.charAt(j)) + " -> " + contador);
                     contador += 3;
-                    //System.out.println(" -> " + contador);
                 }
             }
             contador -= 3;
@@ -41,34 +38,34 @@ public class Ejercicio637 {
     }
 
     public static void rellenarMap(HashMap<Character, Integer> m) {
-        m.put('A', calculoLetra(".-"));// A	.-      113 = 5
-        m.put('B', calculoLetra("-..."));// B	-...    3111111 = 9 
-        m.put('C', calculoLetra("-.-."));// C	-.-.    3111311 = 11 
-        m.put('D', calculoLetra("-.."));// D	-..     31111 = 7
-        m.put('E', calculoLetra("."));// E	.       1 = 1
-        m.put('F', calculoLetra("..-."));// F	..-.    1111311 = 9 
-        m.put('G', calculoLetra("--."));// G	--.     31311 = 9 
-        m.put('H', calculoLetra("...."));// H	....    1111111 = 7
-        m.put('I', calculoLetra(".."));// I	..      111 = 3
-        m.put('J', calculoLetra(".---"));// J	.---    1131313 = 13
-        m.put('K', calculoLetra("-.-"));// K	-.-     31113 = 9
-        m.put('L', calculoLetra(".-.."));// L	.-..    1131111 = 9
-        m.put('M', calculoLetra("--"));// M	--      313 = 7
-        m.put('N', calculoLetra("-."));// N	-.      311 =5
-        m.put('O', calculoLetra("---"));// O	---     31313 = 11
-        m.put('P', calculoLetra(".--."));// P	.--.    1131311 = 11
-        m.put('Q', calculoLetra("--.-"));// Q	--.-    3131113 = 13
-        m.put('R', calculoLetra(".-."));// R	.-.     11311 = 7
-        m.put('S', calculoLetra("..."));// S	...     11111 = 5
-        m.put('T', calculoLetra("-"));// T	-       3 = 3
-        m.put('U', calculoLetra("..-"));// U	..-     11113 = 7
-        m.put('V', calculoLetra("...-"));// V	...-    1111113 = 9
-        m.put('W', calculoLetra(".--"));// W	.--     11313 = 9
-        m.put('X', calculoLetra("-..-"));// X	-..-    3111113 = 11
-        m.put('Y', calculoLetra("-.--"));// Y	-.--    3111313 = 13 
-        m.put('Z', calculoLetra("--.."));// Z	--..    3131111 = 11 
-        m.put('!', calculoLetra("-.-.--"));// !	-.-.--  31113111313 = 19
-        m.put('?', calculoLetra("..--.."));// ?	..--..  11113131111 = 15
+        m.put('A', calculoLetra(".-"));
+        m.put('B', calculoLetra("-..."));
+        m.put('C', calculoLetra("-.-."));
+        m.put('D', calculoLetra("-.."));
+        m.put('E', calculoLetra("."));
+        m.put('F', calculoLetra("..-."));
+        m.put('G', calculoLetra("--.")); 
+        m.put('H', calculoLetra("...."));
+        m.put('I', calculoLetra(".."));
+        m.put('J', calculoLetra(".---"));
+        m.put('K', calculoLetra("-.-"));
+        m.put('L', calculoLetra(".-.."));
+        m.put('M', calculoLetra("--"));
+        m.put('N', calculoLetra("-."));
+        m.put('O', calculoLetra("---"));
+        m.put('P', calculoLetra(".--."));
+        m.put('Q', calculoLetra("--.-"));
+        m.put('R', calculoLetra(".-."));
+        m.put('S', calculoLetra("..."));
+        m.put('T', calculoLetra("-"));
+        m.put('U', calculoLetra("..-"));
+        m.put('V', calculoLetra("...-"));
+        m.put('W', calculoLetra(".--"));
+        m.put('X', calculoLetra("-..-"));
+        m.put('Y', calculoLetra("-.--"));
+        m.put('Z', calculoLetra("--.."));
+        m.put('!', calculoLetra("-.-.--"));
+        m.put('?', calculoLetra("..--.."));
     }
 
     public static int calculoLetra(String s) {
