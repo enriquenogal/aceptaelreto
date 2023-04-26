@@ -30,11 +30,8 @@ public class Ejercicio681 {
         int escalones = 0;
         Arrays.sort(escaleras);
         for (int i = escaleras.length - 1; i >= 0; i--) {
-            try {
-                if (escaleras[i] == escaleras[i + 1]) {
-                    escaleras[i]--;
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
+            if (i != escaleras.length - 1 && escaleras[i] >= escaleras[i + 1]) {
+                escaleras[i] =  escaleras[i + 1] - 1;
             }
             if (escaleras[i] > 0) {
                 escalones += escaleras[i];
