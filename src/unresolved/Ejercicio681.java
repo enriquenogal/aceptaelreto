@@ -1,3 +1,6 @@
+//WA
+
+package unresolved;
 
 import java.util.Arrays;
 import java.util.Scanner;
