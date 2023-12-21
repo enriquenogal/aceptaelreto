@@ -7,11 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 /**
  *
  * @author enogal
@@ -115,8 +110,8 @@ public class Ejercicio713 {
                 addPoints(hs,equipoA, 0, marcadorA - marcadorB, marcadorA);
                 addPoints(hs, equipoB, 3, marcadorB - marcadorA, marcadorB);
             } else {
-                addPoints(hs,equipoA, 0, marcadorA - marcadorB, marcadorA);
-                addPoints(hs, equipoB, 0, marcadorB - marcadorA, marcadorB);
+                addPoints(hs,equipoA, 1, marcadorA - marcadorB, marcadorA);
+                addPoints(hs, equipoB, 1, marcadorB - marcadorA, marcadorB);
             }
         }
         calculaClasificados(hs, nClasificados);
