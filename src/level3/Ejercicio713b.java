@@ -2,7 +2,6 @@ package level3;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -10,24 +9,19 @@ import java.util.Scanner;
  * @author enogal
  */
 public class Ejercicio713b {
-
     class Equipo implements Comparable {
-
         int id;
         int pts = 0;
         int dif = 0;
         int gf = 0;
-
         public Equipo(int id) {
             this.id = id;
         }
-
         public void add(int pts, int dif, int gf) {
             this.pts += pts;
             this.dif += dif;
             this.gf += gf;
         }
-
         @Override
         public int compareTo(Object o) {
             Equipo otro = (Equipo) o;
@@ -39,18 +33,15 @@ public class Ejercicio713b {
                 return Integer.compare(otro.gf, this.gf);
             }
         }
-
         @Override
         public String toString() {
             return "Equipo{" + "id=" + id + ", pts=" + pts + ", dif=" + dif + ", gf=" + gf + '}';
         }
-
         @Override
         public int hashCode() {
             int hash = 7;
             return hash;
         }
-
         @Override
         public boolean equals(Object obj) {
             if (this == obj) {
@@ -71,7 +62,6 @@ public class Ejercicio713b {
             }
             return this.gf == other.gf;
         }
-
     }
 
     public static void main(String[] args) {
@@ -121,9 +111,6 @@ public class Ejercicio713b {
 
     public static void calculaClasificados(ArrayList<Equipo> al, int nClasificados) {
         Collections.sort(al);
-//        for (Equipo equipo : al) {
-//            System.out.println(equipo);
-//        }
         String s = "";
         for (int i = 0; i < nClasificados; i++) {
             s = s + al.get(i).id + " ";
