@@ -1,3 +1,5 @@
+package unresolved;
+
 
 import java.util.Scanner;
 
@@ -26,16 +28,20 @@ public class Ejercicio744 {
                     } else {
                         distancia = n - inicio;
                         if (distancia > t) {
+                            //felicitaciones += (distancia - 1) / t;
                             felicitaciones++;
                             inicio = n;
                             //inicio = -1;
                         }
                     }
                 } else {
-                    felicitaciones++;
+                    //if (inicio != -1) {
+                        //System.out.println("Suma 1 felicitación final");
+                        felicitaciones++;
+                    //}
                 }
             } while (n != 0);
-            System.out.println(felicitaciones);
+            System.out.println("Felicitaciones totales: " + felicitaciones);
         }
     }
 }
