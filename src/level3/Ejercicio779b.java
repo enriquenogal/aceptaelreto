@@ -1,4 +1,5 @@
-//MLE
+package level3;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,7 +13,7 @@ import java.util.Scanner;
  *
  * @author enriquenogal
  */
-public class Ejercicio779e {
+public class Ejercicio779b {
 
     static class Tramo implements Comparable<Tramo> {
 
@@ -31,7 +32,7 @@ public class Ejercicio779e {
 
         @Override
         public int compareTo(Tramo o) {
-            return (o.fin - o.ini) - (this.fin - this.ini);
+            return this.ini - o.ini;
         }
     }
 
@@ -64,35 +65,33 @@ public class Ejercicio779e {
             }
         }
         Collections.sort(tramos);
-        mostrarSalida(tramos, fotogramas);
-    }
-
-    private static void mostrarSalida(ArrayList<Tramo> tramos, int fotogramas) {
-        //System.out.println(tramos);
-        boolean[] b = new boolean[fotogramas];
-        boolean completo = false;
-        for (Tramo tramo : tramos) {
-            for (int i = tramo.ini; i <= tramo.fin; i++) {
-                b[i - 1] = true;
-            }
-            if (completo(b)) {
-                completo = true;
-                break;
-            }
-        }
-        if (completo) {
+        boolean b = calculaSalida(tramos, fotogramas);
+        if (b) {
             System.out.println("SI");
         } else {
             System.out.println("NO");
         }
     }
 
-    private static boolean completo(boolean[] pics) {
-        for (int i = 0; i < pics.length; i++) {
-            if (pics[i] == false) {
+    private static boolean calculaSalida(ArrayList<Tramo> tramos, int fotogramas) {
+        //System.out.println(tramos);
+        if (tramos.get(0).ini != 1) {
+            return false;
+        }
+        Tramo tramoTotal = new Tramo(1, tramos.get(0).fin);
+        for (int i = 1; i < tramos.size(); i++) {
+            //aquí tengo que ir uniendo el tramo que voy recorriendo con tramoTotal
+            //si hay hueco entre ellos tengo que hacer un return false
+            if (tramos.get(i).ini <= tramoTotal.fin + 1) {
+                tramoTotal.fin = Math.max(tramos.get(i).fin, tramoTotal.fin);
+            } else {
                 return false;
             }
         }
-        return true;
+        if (tramoTotal.fin == fotogramas) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
