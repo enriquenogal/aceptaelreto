@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author enriquenogal
  */
-public class Ejercicio747 {
+public class Ejercicio747b {
 
     static class Nodo {
 
@@ -93,34 +93,50 @@ public class Ejercicio747 {
 
     private static void tratarNodo(Nodo n, ArrayList<Nodo> pendientes, ArrayList<Nodo> procesados, char[][] mapa) {
         pendientes.remove(0);
-        if (n.x == mapa.length - 1 && n.y == mapa[0].length - 1) {
-            fin = true;
-            pendientes.clear();
-        } else {
-            try {
-                if (mapa[n.x + 1][n.y] == '.' && !procesados.contains(new Nodo(n.x + 1, n.y))) {
-                    pendientes.add(new Nodo(n.x + 1, n.y));
-                }
-            } catch (Exception e) {
+        try {
+            if (n.x + 1 == mapa.length - 1 && n.y == mapa[0].length - 1) {
+                fin = true;
+                pendientes.clear();
+                return;
             }
-            try {
-                if (mapa[n.x - 1][n.y] == '.' && !procesados.contains(new Nodo(n.x - 1, n.y))) {
-                    pendientes.add(new Nodo(n.x - 1, n.y));
-                }
-            } catch (Exception e) {
+            if (mapa[n.x + 1][n.y] == '.' && !procesados.contains(new Nodo(n.x + 1, n.y))) {
+                pendientes.add(new Nodo(n.x + 1, n.y));
             }
-            try {
-                if (mapa[n.x][n.y + 1] == '.' && !procesados.contains(new Nodo(n.x, n.y + 1))) {
-                    pendientes.add(new Nodo(n.x, n.y + 1));
-                }
-            } catch (Exception e) {
+        } catch (Exception e) {
+        }
+        try {
+            if (n.x - 1 == mapa.length - 1 && n.y == mapa[0].length - 1) {
+                fin = true;
+                pendientes.clear();
+                return;
             }
-            try {
-                if (mapa[n.x][n.y - 1] == '.' && !procesados.contains(new Nodo(n.x, n.y - 1))) {
-                    pendientes.add(new Nodo(n.x, n.y - 1));
-                }
-            } catch (Exception e) {
+            if (mapa[n.x - 1][n.y] == '.' && !procesados.contains(new Nodo(n.x - 1, n.y))) {
+                pendientes.add(new Nodo(n.x - 1, n.y));
             }
+        } catch (Exception e) {
+        }
+        try {
+            if (n.x == mapa.length - 1 && n.y + 1 == mapa[0].length - 1) {
+                fin = true;
+                pendientes.clear();
+                return;
+            }
+            if (mapa[n.x][n.y + 1] == '.' && !procesados.contains(new Nodo(n.x, n.y + 1))) {
+                pendientes.add(new Nodo(n.x, n.y + 1));
+            }
+        } catch (Exception e) {
+        }
+        try {
+            if (n.x == mapa.length - 1 && n.y - 1 == mapa[0].length - 1) {
+                fin = true;
+                pendientes.clear();
+                return;
+            }
+            if (mapa[n.x][n.y - 1] == '.' && !procesados.contains(new Nodo(n.x, n.y - 1))) {
+                pendientes.add(new Nodo(n.x, n.y - 1));
+            }
+        } catch (Exception e) {
         }
     }
+
 }
