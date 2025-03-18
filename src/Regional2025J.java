@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /*
@@ -60,26 +61,35 @@ public class Regional2025J {
     }
 
     private static void tratarCaso(Nodo[] nodos) {
-        ArrayList<Nodo> pdtesProcesar = new ArrayList<Nodo>();
-        pdtesProcesar.add(nodos[1]);
+        ArrayList<Integer> pdtesProcesar = new ArrayList<Integer>();
+        HashSet<Integer> sNodosF = new HashSet<Integer>();
+        HashSet<Integer> sNodosA = new HashSet<Integer>();
+        pdtesProcesar.add(1);
         Nodo procesando;
-        int nodosF = 0, nodosA = 0, tmp;
+        int nodosF = 0, nodosA = 0, tmp, idProcesando;
         while (pdtesProcesar.size() > 0) {
-            procesando = pdtesProcesar.get(0);
+            idProcesando = pdtesProcesar.get(0);
+            procesando = nodos[idProcesando];
             if (procesando.enlaces != null) {
                 for (int i = 0; i < procesando.enlaces.size(); i++) {
                     tmp = procesando.enlaces.get(i);
                     nodos[tmp].caminos = (nodos[tmp].caminos + procesando.caminos) % 1000000007;
-                    pdtesProcesar.add(nodos[tmp]);
+                    pdtesProcesar.add(tmp);
                 }
             } else {
                 if (procesando.tipo == 'F') {
-                    nodosF = (nodosF + procesando.caminos) % 1000000007;
+                    sNodosF.add(idProcesando);
                 } else {
-                    nodosA = (nodosA + procesando.caminos) % 1000000007;
+                    sNodosA.add(idProcesando);
                 }
             }
             pdtesProcesar.remove(0);
+        }
+        for (Integer indice : sNodosF) {
+            nodosF = (nodosF + nodos[indice].caminos) % 1000000007;
+        }
+        for (Integer indice : sNodosA) {
+            nodosA = (nodosA + nodos[indice].caminos) % 1000000007;
         }
         System.out.println(nodosF + " " + nodosA);
     }
