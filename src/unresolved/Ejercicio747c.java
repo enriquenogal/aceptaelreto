@@ -1,3 +1,5 @@
+package unresolved;
+
 
 import java.util.Scanner;
 
@@ -38,7 +40,7 @@ public class Ejercicio747c {
         mapa[0][0] = '1';
         for (int check = 0; check < finChequeo; check++) {
             for (int checkFila = 0; checkFila < f; checkFila++) {
-                //me queda algo
+                //me queda algo, tendría que ver si realmente tengo un true ahí
                 try {
                     if (mapa[checkFila - 1][check] == '1') {
                         mapa[checkFila][check] = '1';
