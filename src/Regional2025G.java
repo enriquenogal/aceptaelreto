@@ -31,6 +31,9 @@ public class Regional2025G {
         int v0, v1, f, max = 0;
         for (int i = 0; i < n; i++) {
             actual = sc.next();
+            if (actual.length() < 2) {
+                actual = "0" + actual;
+            }
             if (i != 0) {
                 if (anterior.charAt(1) != actual.charAt(0)) {
                     correcto = false;
