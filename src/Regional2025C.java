@@ -35,21 +35,22 @@ public class Regional2025C {
             tmp = sc.nextInt();
             tm.put(keys[i], tmp);
         }
-        mostrarSalica(tm);
+        mostrarSalida(tm);
     }
 
-    private static void mostrarSalica(TreeMap<Integer, Integer> tm) {
-        boolean correcto = true;
+    private static void mostrarSalida(TreeMap<Integer, Integer> tm) {
+        boolean correcto = true, primero = true;
         int resta, anterior = Integer.MAX_VALUE;
         for (Map.Entry<Integer, Integer> entry : tm.entrySet()) {
             int key = entry.getKey();
             int value = entry.getValue();
             resta = value - key;
-            if (resta >= anterior) {
+            if (resta >= anterior && !primero) {
                 correcto = false;
                 break;
             } else {
                 anterior = resta;
+                primero = false;
             }
         }
         if (correcto) {
