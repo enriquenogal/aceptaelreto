@@ -1,20 +1,19 @@
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author enriquenogal
  */
 public class Ejercicio821 {
-    
+
     static class Ramal implements Comparable<Ramal> {
+
         String nombrePropietario;
         String lado;
         int distancia;
@@ -27,28 +26,36 @@ public class Ejercicio821 {
 
         @Override
         public int compareTo(Ramal o) {
-            if (this.distancia != o.distancia) return Integer.compare(this.distancia, o.distancia);
-            else return this.lado.compareTo(o.lado);
+            if (this.distancia != o.distancia) {
+                return Integer.compare(this.distancia, o.distancia);
+            } else {
+                return o.lado.compareTo(this.lado);
+            }
         }
-                
-        
-        
+
+        @Override
+        public String toString() {
+            return nombrePropietario;
+        }
     }
-    
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int nRamales;
-        List<Ramal> listaRamales = new ArrayList<Ramal>();
+        Ramal[] aRamales;
         do {
             nRamales = sc.nextInt();
             if (nRamales != 0) {
-                listaRamales.clear();
+                aRamales = new Ramal[nRamales];
                 for (int i = 0; i < nRamales; i++) {
-                    listaRamales.add(new Ramal(sc.next(), sc.next(), sc.nextInt()));
+                    aRamales[i] = new Ramal(sc.next(), sc.next(), sc.nextInt());
                 }
+                Arrays.sort(aRamales);
+                for (Ramal r : aRamales) {
+                    System.out.println(r);
+                }
+                System.out.println("---");
             }
         } while (nRamales != 0);
-        
     }
-    
 }
