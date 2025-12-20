@@ -1,3 +1,5 @@
+package aReg2025;
+
 
 import java.util.Map;
 import java.util.Scanner;
