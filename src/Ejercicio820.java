@@ -1,4 +1,5 @@
 // TLE - precioso pero no sé que puedo acortar para que lleve menos tiempo
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -50,6 +51,7 @@ public class Ejercicio820 {
 
     static ArrayList<Nodo> pdtes = new ArrayList<Nodo>(); //cola de nodos pendientes de procesar
     static ArrayList<Nodo> procesados = new ArrayList<Nodo>(); //lista de nodos ya procesados de los que quiero guardar información
+    static int resultado;
 
     public static void main(String[] args) {
         //el main sólo me sirve para leer los datos que me pasan en cada caso
@@ -76,25 +78,30 @@ public class Ejercicio820 {
         if (mapa[0][0] == 'N' || mapa[filas - 1][columnas - 1] == 'N') { //si el inicio o el fin del camino es N pues IMPOSIBLE
             System.out.println("IMPOSIBLE");
         } else { //si no tengo que hacer cosas
+            resultado = -1; //inicializo el coste
             pdtes.clear(); //vacío la cola
             procesados.clear(); //vacío la lista de procesados
             pdtes.add(new Nodo(0, 0, -1, -1, 1)); //añado a la cola de pendientes de nodos el inicial
             while (pdtes.size() != 0) { //proceso la cola hasta que se vacie
                 procesar(pdtes.get(0), mapa); //proceso el nodo de la posición 0 de la cola de pendientes
-                pdtes.remove(0); //una vez procesado borro ese nodo de la cola
+                if (!pdtes.isEmpty()) {
+                    pdtes.remove(0); //una vez procesado borro ese nodo de la cola
+                }
             }
-            Nodo fin = new Nodo(filas - 1, columnas - 1, 0, 0, 0); //genero un nodo fin ficticio
-            if (!procesados.contains(fin)) { //busco entre los procesados si exite un nodo con las mismas coordenadas que el nodo fin ficticio
+            if (resultado == -1) { //si el resultado es -1 es porque no ha encontrado
                 System.out.println("IMPOSIBLE"); //si no estuviese IMPOSIBLE
             } else {
-                System.out.println(procesados.get(procesados.indexOf(fin)).coste); //si estuviese muestro el coste
-            } 
+                System.out.println(resultado); //si estuviese muestro lo almacenado en coste
+            }
         }
     }
 
     private static void procesar(Nodo n, char[][] mapa) {
         procesados.add(n); //añado el nodo a los procesados
-        if (!(n.fila == mapa.length && n.columna == mapa[0].length)) { //si estoy en el final no hago nada más
+        if (n.fila == mapa.length - 1 && n.columna == mapa[0].length - 1) { //si estoy en el final ya he llegado
+            pdtes.clear(); //borro el contenido de la cola para que ya no siga procesando
+            resultado = n.coste; //pongo el coste de ese nodo en el resultado 
+        } else { //si no a procesar
             Nodo anterior, nuevo;
             //siguientes for: en i y j meto las coordenadas de todos los nodos de alrededor (incluso de si mismo)
             for (int i = n.fila - 1; i <= n.fila + 1; i++) {
