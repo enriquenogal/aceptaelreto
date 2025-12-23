@@ -1,16 +1,7 @@
 package a2025Nav;
 
-
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-/**
- *
- * @author enogal
- */
 public class Ejercicio826 {
 
     public static void main(String[] args) {
@@ -19,9 +10,8 @@ public class Ejercicio826 {
         int[] trenes;
         while (sc.hasNextInt()) {
             nTrenes = sc.nextInt();
-            trenes = new int[nTrenes + 1];
-            trenes[0] = 0;
-            for (int i = 1; i < nTrenes + 1; i++) {
+            trenes = new int[nTrenes];
+            for (int i = 0; i < nTrenes; i++) {
                 trenes[i] = sc.nextInt();
             }
             tratarCaso(trenes);
@@ -29,10 +19,12 @@ public class Ejercicio826 {
     }
 
     private static void tratarCaso(int[] trenes) {
-        int grupos = 0;
-        for (int i = trenes.length - 1; i >= 1; i--) {
-            if (trenes[i] >= trenes[i - 1]) {
+        int grupos = 1;
+        for (int i = trenes.length - 1; i > 0; i--) {
+            if (trenes[i] > trenes[i - 1]) { // a mi gusto debería ser >= pero parece que los trenes salen todos a la vez
                 grupos++;
+            } else {
+                trenes[i - 1] = trenes[i];
             }
         }
         System.out.println(grupos);
