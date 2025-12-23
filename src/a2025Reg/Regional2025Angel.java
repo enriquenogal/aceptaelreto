@@ -1,4 +1,4 @@
-package aReg2025;
+package a2025Reg;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

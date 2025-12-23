@@ -1,3 +1,5 @@
+package a2025Nav;
+
 // TLE - precioso pero no sé que puedo acortar para que lleve menos tiempo
 
 import java.util.ArrayList;

@@ -1,3 +1,5 @@
+package a2025Nav;
+
 import java.util.*;
 
 public class Ejercicio820b {

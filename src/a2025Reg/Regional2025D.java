@@ -1,4 +1,4 @@
-package aReg2025;
+package a2025Reg;
 
 
 import java.util.Scanner;
