@@ -1,7 +1,3 @@
-//WA - si lo hago con double y un redondeo
-//TLE - si lo hago con BigInteger
-//TLE - si lo hago con la alternativa de la simplificación de la fórmula para no usar factoriales
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -57,38 +53,3 @@ public class Ejercicio832 {
         System.out.println(resultado.toString());
     }
 }
-    
-    
-
-//    private static void tratarCaso(int n, int k) {
-//        Alternativa 1
-//        double r = factorial(n) / (factorial(k) * factorial(n - k));
-//        Alternativa 2
-//        double r = 1;
-//        for (int i = 1; i <= k; i++) {
-//            r *= ((1.0 * (n - k) + i) / i);
-//        }
-//        Alternativa 3
-//        BigInteger r = BigInteger.ONE;
-//        r = r.multiply(factorial(n).divide(factorial(k).multiply(factorial(n - k))));
-//        System.out.println(r.toString());
-//    }
-
-//    private static double factorial(int n) {
-//        BigInteger r = new BigInteger();
-//        for (int i = 2; i <= n; i++) {
-//            r *= i;
-//        }
-//        return r;
-//    }
-    
-//    private static BigInteger factorial(int a) {
-//        BigInteger n = BigInteger.valueOf(a);
-//        BigInteger r = BigInteger.ONE;
-//        for (int i = 2; i <= a; i++) {
-//            r = r.multiply(n);
-//            n = n.subtract(BigInteger.ONE);
-//        }
-//        return r;
-//    }
-

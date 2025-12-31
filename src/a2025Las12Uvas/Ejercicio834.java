@@ -1,4 +1,4 @@
-//MLE -- si lo hago con array de string para que no haga conversiones de tipos
+//MLE -- si lo hago con array de Strings para no hacer tantas conversiones
 //TLE -- si lo hago con array de int para que ocupe menos memoria
 
 /*
@@ -17,15 +17,11 @@ public class Ejercicio834 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //int nCasos = Integer.parseInt(sc.nextLine());
         int nCasos = sc.nextInt();
         int nCartas;
-        //String[] a;
         int[] a;
         for (int i = 0; i < nCasos; i++) {
-            //nCartas = Integer.parseInt(sc.nextLine());
             nCartas = sc.nextInt();
-            //a = sc.nextLine().split(" ");
             a = new int[nCartas];
             for (int j = 0; j < a.length; j++) {
                 a[j] = sc.nextInt();
@@ -46,20 +42,15 @@ public class Ejercicio834 {
         }
         System.out.println(c);
     }
-    
+
     private static boolean juntas(int c1, int c2) {
         String str1 = Integer.toString(c1);
         String str2 = Integer.toString(c2);
         for (int i = 0; i < str1.length(); i++) {
-            if (str2.indexOf(str1.charAt(i)) != -1) return true;
+            if (str2.indexOf(str1.charAt(i)) != -1) {
+                return true;
+            }
         }
         return false;
     }
-
-//    private static boolean juntas(String str1, String str2) {
-//        for (int i = 0; i < str1.length(); i++) {
-//            if (str2.indexOf(str1.charAt(i)) != -1) return true;
-//        }
-//        return false;
-//    }
 }
