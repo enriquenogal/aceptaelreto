@@ -22,10 +22,7 @@ public class Ejercicio831 {
     }
 
     private static void tratarCaso(int nFila) {
-        int nInicio = 1;
-        for (int i = 1; i < nFila; i++) {
-            nInicio += i;
-        }
+        int nInicio = (nFila * (nFila -1) / 2) + 1;
         int longitud = nFila - 1;
         for (int i = nInicio; i < nInicio + nFila; i++) {
             longitud += Integer.toString(i).length();
