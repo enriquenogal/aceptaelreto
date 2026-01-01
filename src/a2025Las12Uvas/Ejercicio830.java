@@ -43,28 +43,18 @@ public class Ejercicio830 {
         int tiempoAscensor;
         int tiempoTotal;
         int plantasFran;
-        if (pisoFinFran > pisoActualFran) {
-            for (int i = 0; i < plantasFranInicio; i++) {
-                plantasFran = Math.abs(pisoFinFran - pisoActualFran);
-                tiempoFran = i * tiempoPorPisoFran;
-                plantasAscensor = Math.abs(pisoActualFran - pisoAscensor) + plantasFran;
-                tiempoAscensor = plantasAscensor * tiempoPorPisoAscensor;
-                tiempoTotal = tiempoAscensor + tiempoFran;
-                if (tiempoTotal < min) {
-                    min = tiempoTotal;
-                }
-                pisoActualFran++;
+        for (int i = 0; i < plantasFranInicio; i++) {
+            plantasFran = Math.abs(pisoFinFran - pisoActualFran);
+            tiempoFran = i * tiempoPorPisoFran;
+            plantasAscensor = Math.abs(pisoActualFran - pisoAscensor) + plantasFran;
+            tiempoAscensor = plantasAscensor * tiempoPorPisoAscensor;
+            tiempoTotal = tiempoAscensor + tiempoFran;
+            if (tiempoTotal < min) {
+                min = tiempoTotal;
             }
-        } else {
-            for (int i = 0; i < plantasFranInicio; i++) {
-                plantasFran = Math.abs(pisoFinFran - pisoActualFran);
-                tiempoFran = i * tiempoPorPisoFran;
-                plantasAscensor = Math.abs(pisoActualFran - pisoAscensor) + plantasFran;
-                tiempoAscensor = plantasAscensor * tiempoPorPisoAscensor;
-                tiempoTotal = tiempoAscensor + tiempoFran;
-                if (tiempoTotal < min) {
-                    min = tiempoTotal;
-                }
+            if (pisoFinFran > pisoActualFran) {
+                pisoActualFran++;
+            } else {
                 pisoActualFran--;
             }
         }
