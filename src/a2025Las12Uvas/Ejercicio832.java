@@ -40,7 +40,6 @@ public class Ejercicio832 {
         k = Math.min(k, n - k);
         
         // Algoritmo optimizado sin factoriales completos
-        // C(n,k) = Π_{i=1}^{k} (n - k + i) / i
         BigInteger resultado = BigInteger.ONE;
         
         for (int i = 1; i <= k; i++) {
