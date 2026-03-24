@@ -1,4 +1,4 @@
-package level20;
+package level30;
 
 //Time limit exceeded (TLE)
 import java.util.Scanner;
