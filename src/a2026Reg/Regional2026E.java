@@ -55,7 +55,7 @@ public class Regional2026E {
         while (pdtes.size() != 0 && encontrado == false) {
             nodoTratar = pdtes.get(0);
             pdtes.remove(0);
-            if (nodoTratar.salto + nodoTratar.posicion >= fin) {
+            if (nodoTratar.salto + nodoTratar.posicion > fin) {
                 resultado = nodoTratar.coste + 1;
                 encontrado = true;
             } else {
@@ -65,12 +65,10 @@ public class Regional2026E {
                 }
             }
         }
-        
         if (encontrado) {
             System.out.println(resultado);
         } else {
             System.out.println("IMPOSIBLE");
         }
-        
     }
 }
