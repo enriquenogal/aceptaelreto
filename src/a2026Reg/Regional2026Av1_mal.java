@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author enogal
  */
-public class Regional2026A {
+public class Regional2026Av1_mal {
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
