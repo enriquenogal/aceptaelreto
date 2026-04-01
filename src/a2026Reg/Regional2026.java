@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author enogal
  */
-public class Regional2026Av2 {
+public class Regional2026 {
 
     static int posicion;
 
