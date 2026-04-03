@@ -20,12 +20,8 @@ public class Regional2026A {
         long r;
         while (sc.hasNextLine()) {
             entrada = sc.nextLine();
-            r = 0;
             posicion = 0;
-            while (posicion < entrada.length()) {
-                r += calcula(entrada);
-            }
-            System.out.println(r);
+            System.out.println(calcula(entrada));
         }
     }
 
