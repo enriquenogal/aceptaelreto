@@ -1,3 +1,5 @@
+//TLE
+
 package a2025Reg;
 
 
@@ -13,7 +15,7 @@ import java.util.TreeMap;
  *
  * @author enogal
  */
-public class Regional2025C {
+public class Ejercicio841 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

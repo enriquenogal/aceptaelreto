@@ -1,3 +1,4 @@
+//TLE 
 package a2025Reg;
 
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
  *
  * @author enriquenogal
  */
-public class Regional2025J {
+public class Ejercicio848 {
 
     static class Nodo {
 

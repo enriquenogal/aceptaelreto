@@ -1,4 +1,4 @@
-package a2025Reg;
+package level21;
 
 
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author enogal
  */
-public class Regional2025G {
+public class Ejercicio845 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

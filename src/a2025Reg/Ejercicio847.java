@@ -1,3 +1,4 @@
+//WA
 package a2025Reg;
 
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
  *
  * @author enogal
  */
-public class Regional2025I {
+public class Ejercicio847 {
     
     static class Plato {
         int momento;
@@ -43,7 +44,6 @@ public class Regional2025I {
         String salida = "";
         for (int i = 0; i < n; i++) {
             p = new Plato(sc.nextInt(),sc.nextInt());
-            
             salida += al.size() + " ";
             al.add(p);
         }

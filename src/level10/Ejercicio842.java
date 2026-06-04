@@ -1,4 +1,4 @@
-package a2025Reg;
+package level10;
 
 
 import java.util.Scanner;
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author enriquenogal
  */
-public class Regional2025D {
+public class Ejercicio842 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
